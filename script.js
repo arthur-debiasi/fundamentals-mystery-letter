@@ -83,6 +83,9 @@ function classRnd() {
 
 function texter() {
   const spliter = inputText.value.trim().split(/\s+/); // trim() remove os espaços do início e do final de uma string e .split(/\s+/) separa a string por 1 ou mais espaços;
+  const cartaContador = spliter.length;
+  const pCartacontador = document.getElementById('carta-contador');
+  pCartacontador.innerText = cartaContador;
   let spliterSpan = '';
   for (let i = 0; i < spliter.length; i += 1) {
     spliterSpan += `<span>${spliter[i]}</span> `;
@@ -90,6 +93,7 @@ function texter() {
   text.innerHTML = spliterSpan;
   if (text.innerText === '') {
     text.innerText = 'Por favor, digite o conteúdo da carta.';
+    pCartacontador.innerText = '';
   }
   classRnd();
 }
